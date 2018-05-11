@@ -1,11 +1,22 @@
 # /usr/bin/env python
 # _*_ coding:utf-8 _*_
 
-from flask import Flask
+from flask import Flask, render_template
+from flask_script import Manager
 
 app = Flask(__name__)
+manage = Manager(app)
 
 
 @app.route('/')
 def index():
-    return "<h1>hello</h1>"
+    return render_template('index.html')
+
+
+@app.route('/user/<name>')
+def user(name):
+    return render_template('user.html', name=name)
+
+
+if __name__ == '__main__':
+    manage.run()
