@@ -1,1 +1,10 @@
-<h1>hello,{{name}}</h1>
+{% extends "base.html" %}
+{% block title %}
+Hello,{{ name }}
+{% endblock %}
+{% block body %}
+<p>welcome,{{ name }}</p>
+{% endblock %}
+{% block page_content %}
+<p>welcome content,{{ name }}</p>
+{% endblock %}

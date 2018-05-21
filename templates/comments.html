@@ -1,0 +1,6 @@
+{%import '_macros.html' as macro%}
+<ul>
+    {%for i in range(num)%}
+    {{macro.render_comment(i)}}
+    {%endfor%}
+</ul>
